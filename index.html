@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>GAV&LOVE — ваша система</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  --paper:#FBF7F2; --paper-2:#F3EDE4; --ink:#1E1736; --ink-2:#4A4260; --soft:#6F6788;
+  --violet:#6A4BFF; --violet-deep:#241B52; --moss:#4F7355; --amber:#8A6A12; --amber-bg:#FBF0D2;
+  --line:#E2D9CD; --line-2:#CFC3B2;
+  --disp:'Unbounded','Trebuchet MS',sans-serif;
+  --body:'Manrope','Segoe UI',system-ui,sans-serif;
+  --mono:'JetBrains Mono','Consolas',monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#15112A; --paper-2:#1D1739; --ink:#F4F0FF; --ink-2:#C9C0E8; --soft:#9A91BC;
+  --violet:#9C85FF; --violet-deep:#2B2160; --moss:#84B08B; --amber:#E7C567; --amber-bg:#3A2F12;
+  --line:#2E2655; --line-2:#413673;
+}}
+:root[data-theme="dark"]{
+  --paper:#15112A; --paper-2:#1D1739; --ink:#F4F0FF; --ink-2:#C9C0E8; --soft:#9A91BC;
+  --violet:#9C85FF; --violet-deep:#2B2160; --moss:#84B08B; --amber:#E7C567; --amber-bg:#3A2F12;
+  --line:#2E2655; --line-2:#413673;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:var(--violet)}
+h1,h2,h3{margin:0;text-wrap:balance}
+::selection{background:var(--violet);color:#fff}
+
+.warn{background:var(--amber-bg);color:var(--amber);border-bottom:1px solid var(--line-2);font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;padding:11px 20px;text-align:center}
+.warn b{font-weight:700}
+
+.bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:12px 20px;background:var(--paper);border-bottom:1px solid var(--line)}
+.mark{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em}
+.mark b{color:var(--violet)}
+.bar .sep{flex:1}
+.bar nav{display:flex;gap:16px;flex-wrap:wrap}
+.bar nav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);text-decoration:none}
+.bar nav a:hover,.bar nav a:focus-visible{color:var(--violet)}
+
+.wrap{max-width:1060px;margin:0 auto;padding-inline:20px}
+.hero{padding-block:64px 48px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);margin:0 0 20px}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(32px,5.6vw,62px);line-height:1.04;letter-spacing:-.02em;max-width:17ch}
+.hero p{margin:24px 0 0;max-width:58ch;font-size:clamp(16px,1.8vw,20px);color:var(--ink-2)}
+
+section{padding-block:52px;border-bottom:1px solid var(--line);scroll-margin-top:72px}
+section:last-of-type{border-bottom:0}
+.num{font-family:var(--mono);font-size:12px;color:var(--violet);letter-spacing:.1em;display:block;margin-bottom:10px}
+h2{font-family:var(--disp);font-weight:500;font-size:clamp(22px,3.2vw,32px);line-height:1.15;letter-spacing:-.01em}
+h3{font-size:17px;font-weight:700}
+.lede{margin:14px 0 0;max-width:62ch;color:var(--ink-2)}
+
+/* посилання */
+.links{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line)}
+.links a{display:block;background:var(--paper);padding:22px 20px;text-decoration:none;color:inherit}
+.links a:hover,.links a:focus-visible{background:var(--paper-2)}
+.links .t{font-weight:700;font-size:16.5px;display:block}
+.links .u{font-family:var(--mono);font-size:11.5px;color:var(--violet);word-break:break-all;display:block;margin-top:7px}
+.links .d{font-size:14.5px;color:var(--ink-2);display:block;margin-top:9px;line-height:1.5}
+
+/* доступи */
+.scroller{overflow-x:auto;margin-top:28px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15.5px}
+th{text-align:left;font-family:var(--mono);font-weight:700;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--soft);padding:0 16px 12px 0;border-bottom:1px solid var(--line-2)}
+td{padding:13px 16px 13px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+td:first-child{color:var(--ink);font-weight:500}
+tbody tr:last-child td{border-bottom:0}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fill{display:inline-block;min-width:130px;padding:3px 9px;border:1px dashed var(--violet);border-radius:3px;
+  font-family:var(--mono);font-size:13px;color:var(--violet);background:transparent}
+
+/* інструкція */
+.how{margin-top:32px;display:flex;flex-direction:column}
+.how > div{border-top:1px solid var(--line);padding-block:20px;display:grid;grid-template-columns:230px 1fr;gap:28px}
+.how > div:last-child{border-bottom:1px solid var(--line)}
+.how .q{font-weight:700;font-size:16px}
+.how .a{color:var(--ink-2);font-size:15.5px;margin:0}
+.how .a em{font-style:normal;font-family:var(--mono);font-size:13.5px;background:var(--paper-2);padding:2px 7px;border-radius:3px;color:var(--ink);white-space:nowrap}
+@media (max-width:680px){ .how > div{grid-template-columns:1fr;gap:8px} }
+
+/* ціна */
+.zero{margin-top:30px;display:flex;flex-wrap:wrap;align-items:baseline;gap:18px;padding:24px 26px;background:var(--paper-2);border-left:3px solid var(--moss)}
+.zero b{font-family:var(--disp);font-weight:700;font-size:clamp(32px,5vw,44px);line-height:1;color:var(--moss)}
+.zero span{font-size:16px;color:var(--ink-2);max-width:46ch}
+.draft{margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--violet);border:1px dashed var(--violet);padding:9px 12px;display:inline-block}
+
+/* фіолетова смуга */
+.band{background:var(--violet-deep);color:#EDE8FF;border-bottom:0}
+.band h2{color:#fff} .band .num{color:#B8A6FF} .band .lede{color:#CFC4F5}
+.keys{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:32px}
+.keys h3{font-family:var(--disp);font-weight:500;font-size:19px;margin:12px 0 10px;color:#fff}
+.keys p{margin:0 0 10px;color:#CFC4F5;font-size:15.5px}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border:1px solid #4B3D95;border-radius:3px;color:#B8A6FF}
+
+/* що якщо */
+.faq{margin-top:30px;display:flex;flex-direction:column;gap:1px;background:var(--line)}
+.faq details{background:var(--paper);padding:18px 20px}
+.faq summary{cursor:pointer;font-weight:700;font-size:16px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";font-family:var(--mono);color:var(--violet);margin-right:11px}
+.faq details[open] summary::before{content:"−"}
+.faq p{margin:12px 0 0;color:var(--ink-2);font-size:15.5px}
+
+/* чек-лист */
+.check{margin-top:28px;display:flex;flex-direction:column}
+.check label{display:flex;gap:14px;align-items:flex-start;padding-block:13px;border-top:1px solid var(--line);cursor:pointer;font-size:15.5px;color:var(--ink-2)}
+.check label:last-child{border-bottom:1px solid var(--line)}
+.check input{appearance:none;flex:0 0 18px;width:18px;height:18px;margin-top:3px;border:1.5px solid var(--line-2);border-radius:2px;background:transparent;cursor:pointer}
+.check input:checked{background:var(--moss);border-color:var(--moss)}
+.check input:checked + span{text-decoration:line-through;color:var(--soft)}
+.check input:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+.check b{color:var(--ink)}
+
+footer{padding-block:42px 56px;color:var(--soft);font-size:14px}
+footer .mark{display:block;color:var(--ink);margin-bottom:10px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{.warn,.bar{position:static} .faq details{break-inside:avoid} details{open:true}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span class="mark">GAV<b>&amp;</b>LOVE</span>
+  <span class="sep"></span>
+  <nav>
+    <a href="#links">Посилання</a>
+    <a href="#access">Доступи</a>
+    <a href="#how">Інструкція</a>
+    <a href="#control">Контроль</a>
+    <a href="#price">Вартість</a>
+    <a href="#handover">Передача</a>
+    <a href="#help">Якщо щось не так</a>
+  </nav>
+</div>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">Усе про вашу систему в одному місці</p>
+  <h1>Ваш салон, ваші дані, ваші ключі</h1>
+  <p>Тут зібрано все: адреси, логіни, як що змінити самій, скільки коштує утримання і що саме переходить до вас. Збережіть цю сторінку в закладки — вона працює і без інтернету.</p>
+</header>
+
+<section id="links">
+  <span class="num">01</span>
+  <h2>Посилання</h2>
+  <p class="lede">Сім адрес. Перші дві потрібні щодня, решта — за потреби.</p>
+  <div class="links">
+    <a href="https://besenok911-cloud.github.io/gav-and-love/" target="_blank" rel="noopener">
+      <span class="t">Сайт салону</span>
+      <span class="u">besenok911-cloud.github.io/gav-and-love/</span>
+      <span class="d">Те, що бачать клієнти: послуги, прайс, галерея, готель, садочок, запис.</span>
+    </a>
+    <a href="https://besenok911-cloud.github.io/gav-and-love/admin.html" target="_blank" rel="noopener">
+      <span class="t">CRM — ваш кабінет</span>
+      <span class="u">…/admin.html</span>
+      <span class="d">Записи, клієнти, прайс, майстри, звіти, фінанси, тексти й фото сайту.</span>
+    </a>
+    <a href="https://besenok911-cloud.github.io/gav-and-love/master.html" target="_blank" rel="noopener">
+      <span class="t">Кабінет майстра</span>
+      <span class="u">…/master.html</span>
+      <span class="d">Вхід за особистим кодом. Майстер бачить свій розклад і своїх тварин.</span>
+    </a>
+    <a href="https://besenok911-cloud.github.io/gav-and-love/cabinet.html" target="_blank" rel="noopener">
+      <span class="t">Кабінет клієнта</span>
+      <span class="u">…/cabinet.html</span>
+      <span class="d">Клієнт заходить через Telegram і бачить свої візити та фото улюбленця.</span>
+    </a>
+    <a href="https://besenok911-cloud.github.io/gav-and-love/review.html" target="_blank" rel="noopener">
+      <span class="t">Сторінка відгуків</span>
+      <span class="u">…/review.html</span>
+      <span class="d">Посилання, яке можна давати клієнту після візиту.</span>
+    </a>
+    <a href="https://t.me/GAV_and_LOVE_bot" target="_blank" rel="noopener">
+      <span class="t">Telegram-бот</span>
+      <span class="u">t.me/GAV_and_LOVE_bot</span>
+      <span class="d">Нагадування клієнтам і підтвердження візитів. Замінюється на вашого при передачі.</span>
+    </a>
+    <a href="https://gavlove-booking.besenok911.workers.dev/health" target="_blank" rel="noopener">
+      <span class="t">Чи все живе</span>
+      <span class="u">…workers.dev/health</span>
+      <span class="d">Якщо відкривається і пише <span class="mono">ok:true</span> — сервер працює. Це перше, що варто перевірити, коли щось дивне.</span>
+    </a>
+  </div>
+</section>
+
+<section id="access">
+  <span class="num">02</span>
+  <h2>Доступи</h2>
+  <p class="lede">У кожного співробітника свій іменний акаунт — окремий логін і окремий пароль. Спільних паролів у системі немає навмисно: так видно, хто що зробив, і так можна прибрати одну людину, не чіпаючи решту.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>Роль</th><th>Що бачить</th><th>Чого не бачить</th></tr></thead>
+      <tbody>
+        <tr><td>Власниця</td><td>Усе: записи, клієнти, прайс, звіти, фінанси, керування акаунтами.</td><td>—</td></tr>
+        <tr><td>Адміністратор</td><td>Записи, клієнтів, прайс, сайт, розсилки, звіти.</td><td>Фінанси й акаунти.</td></tr>
+        <tr><td>Майстер</td><td>Свій розклад і тварин, які до нього записані.</td><td>Фінанси салону, чужих клієнтів, прайс.</td></tr>
+        <tr><td>Підтримка</td><td>Сайт і налаштування — і тільки поки власниця відкрила доступ.</td><td>Клієнтів, телефонів, записів, фото тварин, відгуків. Завжди.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="lede" style="margin-top:26px"><b>Логіни й паролі передаються окремо</b> — файлом із рук у руки, не цією сторінкою. Це не формальність: сторінка живе в інтернеті, і все, що на ній написано, може прочитати будь-хто, хто знає адресу.</p>
+  <p class="lede" style="margin-top:14px">При першому вході система попросить змінити пароль — так задумано. Після зміни старий не працює, і новий не знає ніхто, крім вас. Прочитати пароль назад із системи неможливо, тільки перезаписати.</p>
+  <p class="lede" style="margin-top:14px">Завести нового співробітника або прибрати того, хто пішов: у CRM угорі — <b>Доступи</b>. Знята галочка «активний» вибиває людину з системи одразу, а не колись потім.</p>
+</section>
+
+<section id="how">
+  <span class="num">03</span>
+  <h2>Як зробити самій</h2>
+  <p class="lede">Усе нижче робиться без розробника. Зміни на сайті видно протягом хвилини — якщо не видно одразу, оновіть сторінку з <em>Ctrl+Shift+R</em>.</p>
+  <div class="how">
+    <div><div class="q">Змінити ціну</div><p class="a">CRM → <em>Послуги</em> → знайти породу в таблиці → виправити число → <em>Зберегти</em>.</p></div>
+    <div><div class="q">Додати або прибрати послугу</div><p class="a">CRM → <em>Послуги</em> → <em>＋ Додати послугу</em>, або зняти галочку «активна», щоб сховати її з сайту, не видаляючи.</p></div>
+    <div><div class="q">Змінити текст на сайті</div><p class="a">CRM → <em>Сайт</em> → потрібний розділ → <em>Тексти й фото</em> → виправити → <em>Зберегти зміни</em>.</p></div>
+    <div><div class="q">Замінити фото на сайті</div><p class="a">Там само: CRM → <em>Сайт</em> → розділ → <em>Тексти й фото</em> → натиснути на фото й вибрати нове. Можна з телефона.</p></div>
+    <div><div class="q">Сховати цілий розділ</div><p class="a">CRM → <em>Сайт</em> → зняти галочку <em>Показувати на сайті</em> навпроти розділу. Вміст лишається, просто не показується.</p></div>
+    <div><div class="q">Додати роботу в галерею</div><p class="a">Відкрити картку улюбленця → фото «до і після» → кнопка 🌐 біля потрібного фото. Воно з'явиться в галереї на сайті.</p></div>
+    <div><div class="q">Змінити графік майстра</div><p class="a">CRM → <em>Розклад</em> → <em>Майстри</em> → години, перерва, вихідні, відпустка. Вільні години для запису перерахуються самі.</p></div>
+    <div><div class="q">Відпустка або лікарняний</div><p class="a">Там само, поле <em>Відпустки</em>: на ці дати майстра просто не буде серед вільних.</p></div>
+    <div><div class="q">Записати клієнта вручну</div><p class="a">CRM → <em>Записи</em> → <em>＋ Новий запис</em>. Якщо час зайнятий, система попередить.</p></div>
+    <div><div class="q">Перенести або скасувати візит</div><p class="a">Відкрити запис → змінити дату й час або натиснути <em>Скасувати</em>. Клієнту піде повідомлення, якщо він підключений до бота.</p></div>
+    <div><div class="q">Написати клієнту</div><p class="a">Картка клієнта → <em>✈️ Повідомлення</em>. Піде в Telegram від імені салону.</p></div>
+    <div><div class="q">Подивитись, скільки заробили</div><p class="a">CRM → <em>Звіти</em> — візити, виручка, звідки приходять клієнти. <em>Фінанси</em> — витрати й прибуток, видно тільки вам.</p></div>
+    <div><div class="q">Налаштувати нагадування</div><p class="a">CRM → значок дзвіночка <em>Нагадування</em>: за скільки годин нагадувати, через скільки тижнів кликати повторно, подарунок за візити.</p></div>
+  </div>
+</section>
+
+<section id="control" class="band">
+  <span class="num">04</span>
+  <h2>Дві кнопки, які лишаються у вас</h2>
+  <p class="lede">Після передачі розробник не має жодного доступу, про який ви не знаєте. Обидва вмикаєте і вимикаєте ви.</p>
+  <div class="keys">
+    <div>
+      <span class="tag">у CRM</span>
+      <h3>Підтримка</h3>
+      <p>Кнопка «Підтримка» вгорі. Розробник не бачить нічого, доки ви не відкриєте доступ — на 2 години, 8 годин, добу або три.</p>
+      <p>Окремою галочкою вирішуєте, чи пускати його до цін. Клієнтів, телефонів, записів, фото тварин і відгуків він не бачить у жодному режимі й не може написати жодному вашому клієнту.</p>
+      <p>Закрити — один клік, діє миттєво. Унизу тієї ж модалки видно журнал: хто, коли і що робив.</p>
+    </div>
+    <div>
+      <span class="tag">у чаті салону</span>
+      <h3>Оновлення</h3>
+      <p>Нова версія програми не потрапляє в салон сама. У чат приходить повідомлення: одним реченням, що зміниться, і дві кнопки — <b>Випустити</b> і <b>Не зараз</b>.</p>
+      <p>Мовчання означає «ні»: запит згасає за годину і нічого не їде.</p>
+      <p>Після встановлення 45 хвилин світиться <b>Повернути як було</b>. Натиснули — за хвилину все як було.</p>
+    </div>
+  </div>
+  <p class="lede" style="margin-top:32px;border-left:3px solid #8E76FF;padding:18px 22px;background:#2E2470;max-width:none">Сказати чесно: це не захист від розробника, який захотів нашкодити — код, що оновлюється, технічно може все. Механізм дає <b>облік, паузу і кнопку назад</b>. Ці три речі працюють однаково, читаєте ви опис чи тиснете «так» не дивлячись.</p>
+</section>
+
+<section id="price">
+  <span class="num">05</span>
+  <h2>Скільки коштує</h2>
+  <div class="zero">
+    <b>0 ₴</b>
+    <span>на місяць коштують сервери, база, файли, бот і резервні копії. Усе вкладається в безкоштовні тарифи з великим запасом — і вкладатиметься, навіть якщо салон виросте вдесятеро.</span>
+  </div>
+  <p class="lede" style="margin-top:24px">Гроші беруться за те, що система працює і розвивається, а не за «сервер»: сервер коштує нуль, і це чесніше сказати прямо.</p>
+  <div class="scroller">
+    <table>
+      <thead><tr><th>Позиція</th><th>Сума</th></tr></thead>
+      <tbody>
+        <tr><td>Сайт, CRM, запис, бот, кабінети — уже зроблено</td><td class="mono">60 000 ₴</td></tr>
+        <tr><td>Супровід: робота бекенду, щонічні копії, оновлення платформи, узгоджені години на правки</td><td class="mono">2 500 ₴ / міс</td></tr>
+        <tr><td>Правки понад пакет</td><td class="mono">800 ₴ / год</td></tr>
+        <tr><td>Власний домен — напряму реєстратору</td><td class="mono">400–600 ₴ / рік</td></tr>
+        <tr><td>Сервери, база, бот, резервні копії</td><td class="mono">0 ₴</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="draft">чернетка — замінити на остаточні цифри перед передачею</p>
+  <p class="lede" style="margin-top:22px">Нові функції — окремими проєктами понад супровід, кожна зі своєю оцінкою.</p>
+</section>
+
+<section id="handover">
+  <span class="num">06</span>
+  <h2>Що переходить до вас</h2>
+  <p class="lede">Позначайте по ходу — галочки зберігаються у вашому браузері.</p>
+  <div class="check">
+    <label><input type="checkbox" id="h1"><span><b>Сайт</b> і всі його тексти та фото.</span></label>
+    <label><input type="checkbox" id="h2"><span><b>Усі дані салону:</b> клієнти, улюбленці, записи, фото, звіти. Вивантаження на першу вимогу, будь-коли.</span></label>
+    <label><input type="checkbox" id="h3"><span><b>Telegram-бот</b> — створюється у BotFather на ваш акаунт, токен знаєте тільки ви. <b>Робити якнайраніше:</b> кожен уже підключений клієнт має натиснути «Старт» у нового бота, а зараз таких двоє.</span></label>
+    <label><input type="checkbox" id="h4"><span><b>Домен</b> — купується на ваш акаунт, 400–600 ₴ на рік.</span></label>
+    <label><input type="checkbox" id="h5"><span><b>Google-календар</b> — створюється у вашому акаунті.</span></label>
+    <label><input type="checkbox" id="h6"><span><b>Акаунти в CRM</b> — ваш, адміністратора і майстрів; паролі змінені вами.</span></label>
+    <label><input type="checkbox" id="h7"><span><b>Перевипущені</b> аварійний пароль і ключі календаря — у розробника не лишається нічого.</span></label>
+    <label><input type="checkbox" id="h8"><span><b>Вирішено, у кого зберігаються резервні копії</b> — і це записано, а не мається на увазі.</span></label>
+    <label><input type="checkbox" id="h9"><span><b>Прибрані демо-дані</b> — інакше перший же екран «Фінанси» покаже вигадану виручку.</span></label>
+    <label><input type="checkbox" id="h10"><span><b>Ліцензія:</b> безстрокове право користуватись сайтом і CRM для свого салону, повні права на свій контент і свої дані.</span></label>
+  </div>
+</section>
+
+<section id="help">
+  <span class="num">07</span>
+  <h2>Якщо щось не так</h2>
+  <div class="faq">
+    <details>
+      <summary>Сайт не відкривається або виглядає дивно</summary>
+      <p>Спершу оновіть сторінку з <b>Ctrl+Shift+R</b> (на телефоні — закрийте вкладку й відкрийте заново): браузер міг запам'ятати стару версію. Якщо не допомогло — відкрийте посилання «Чи все живе» з розділу 01. Пише <span class="mono">ok:true</span> — справа в браузері, не в системі.</p>
+    </details>
+    <details>
+      <summary>Не приходять записи в Telegram</summary>
+      <p>Перевірте, що бот не заблокований і чат салону не архівований. Потім CRM → дзвіночок <b>Нагадування</b> → внизу має бути написано, що бота підключено. Якщо ні — натисніть «Підключити бота».</p>
+    </details>
+    <details>
+      <summary>Клієнт каже, що не може записатись</summary>
+      <p>Найчастіше — немає вільних годин: усі майстри зайняті, у відпустці або в них вихідний. Подивіться CRM → <b>Розклад</b> на цю дату. Якщо години є, а сайт їх не показує — напишіть у підтримку, це вже до розробника.</p>
+    </details>
+    <details>
+      <summary>Помилилась у прайсі й не пам'ятаю, як було</summary>
+      <p>Тексти сайту мають відкат на один крок. Прайс — ні, але база зберігається щоночі, тож відновити вчорашній стан можна. Напишіть у підтримку й скажіть, коли приблизно все було правильно.</p>
+    </details>
+    <details>
+      <summary>Забула пароль</summary>
+      <p>Якщо ви власниця — вхід відновлюється аварійним паролем, який ви задали при передачі. Якщо забули й його — напишіть у підтримку, це вирішується, але довше. Пароль співробітника ви змінюєте самі: CRM → <b>Доступи</b>.</p>
+    </details>
+    <details>
+      <summary>Здається, хтось змінив те, чого не мав</summary>
+      <p>CRM → <b>Підтримка</b> → унизу два журнали: що робила підтримка і які оновлення встановлювались, із датами й іменами. Якщо там порожньо — зміни зробив хтось із ваших акаунтів; подивіться, хто був у системі.</p>
+    </details>
+    <details>
+      <summary>Хочу нову функцію</summary>
+      <p>Напишіть своїми словами, що має статися і навіщо. Розробник скаже, скільки це займе. Дрібні правки входять у супровід, більші — окремою оцінкою.</p>
+    </details>
+  </div>
+  <p class="lede" style="margin-top:32px"><b>Підтримка:</b> <span class="fill">вписати контакт</span> · відповідь у робочі дні протягом <span class="fill">__ год</span></p>
+</section>
+
+<footer>
+  <span class="mark">GAV<b>&amp;</b>LOVE</span>
+  Сайт, CRM, запис і бот · вересень 2026. Цей файл можна зберегти на робочий стіл — він працює без інтернету, окрім самих посилань.
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var KEY='gavlove-portal-check';
+  var boxes=[].slice.call(document.querySelectorAll('.check input[type=checkbox]'));
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ saved={}; }
+  boxes.forEach(function(b){
+    if(saved[b.id]) b.checked=true;
+    b.addEventListener('change',function(){
+      saved[b.id]=b.checked;
+      try{ localStorage.setItem(KEY,JSON.stringify(saved)); }catch(e){}
+    });
+  });
+})();
+</script>
+</body>
+</html>
