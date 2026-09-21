@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>GAV&LOVE — бриф</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+:root{--paper:#FBF7F2;--paper-2:#F3EDE4;--ink:#1E1736;--ink-2:#4A4260;--soft:#6F6788;
+  --violet:#6A4BFF;--violet-deep:#241B52;--moss:#4F7355;--rose:#A63D57;
+  --line:#E2D9CD;--line-2:#CFC3B2;
+  --disp:'Unbounded','Trebuchet MS',sans-serif;--body:'Manrope','Segoe UI',system-ui,sans-serif;--mono:'JetBrains Mono','Consolas',monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15112A;--paper-2:#1D1739;--ink:#F4F0FF;--ink-2:#C9C0E8;--soft:#9A91BC;
+  --violet:#9C85FF;--violet-deep:#2B2160;--moss:#84B08B;--rose:#E58BA0;--line:#2E2655;--line-2:#413673}}
+:root[data-theme="dark"]{
+  --paper:#15112A;--paper-2:#1D1739;--ink:#F4F0FF;--ink-2:#C9C0E8;--soft:#9A91BC;
+  --violet:#9C85FF;--violet-deep:#2B2160;--moss:#84B08B;--rose:#E58BA0;--line:#2E2655;--line-2:#413673}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--violet)}
+h1,h2{margin:0;text-wrap:balance}
+::selection{background:var(--violet);color:#fff}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:14px;
+  padding:12px 20px;background:var(--paper);border-bottom:1px solid var(--line)}
+.mark{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.06em;text-decoration:none;color:inherit}
+.mark b{color:var(--violet)}
+.bar .sep{flex:1}
+.bar .back{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);text-decoration:none}
+.bar .back:hover{color:var(--violet)}
+
+.wrap{max-width:780px;margin:0 auto;padding-inline:20px;padding-block:52px 72px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet);margin:0 0 18px}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,5.4vw,52px);line-height:1.05;letter-spacing:-.02em}
+.lede{margin:22px 0 0;color:var(--ink-2);max-width:60ch}
+
+fieldset{border:0;margin:0;padding:0}
+.part{margin-top:52px;padding-top:30px;border-top:1px solid var(--line)}
+.part:first-of-type{border-top:0;padding-top:0}
+.part > legend, .part > h2{font-family:var(--disp);font-weight:500;font-size:22px;padding:0;margin:0 0 6px}
+.part .hint{margin:0 0 26px;color:var(--soft);font-size:15px;max-width:58ch}
+
+.q{margin-bottom:26px}
+.q label{display:block;font-weight:700;font-size:16.5px;margin-bottom:4px}
+.q .sub{display:block;color:var(--soft);font-size:14.5px;margin-bottom:10px;line-height:1.5}
+.q textarea,.q input[type=text]{
+  width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:var(--paper-2);
+  border:1px solid var(--line-2);border-radius:4px;padding:12px 14px;line-height:1.55;resize:vertical}
+.q textarea{min-height:86px}
+.q textarea:focus,.q input:focus{outline:2px solid var(--violet);outline-offset:1px;border-color:var(--violet)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:560px){.two{grid-template-columns:1fr}}
+
+.trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.send{margin-top:44px;padding-top:30px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+button{
+  font-family:var(--body);font-weight:700;font-size:16.5px;color:#fff;background:var(--violet);
+  border:0;border-radius:4px;padding:15px 30px;cursor:pointer}
+button:hover{background:var(--violet-deep)}
+button:disabled{opacity:.55;cursor:default}
+button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.send .state{font-size:15px;color:var(--soft);flex:1;min-width:220px}
+.state.good{color:var(--moss);font-weight:700}
+.state.bad{color:var(--rose);font-weight:700}
+
+.saved{margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--soft)}
+.done{margin-top:34px;padding:26px 28px;background:var(--paper-2);border-left:3px solid var(--moss)}
+.done h2{font-family:var(--disp);font-weight:500;font-size:21px;margin-bottom:10px}
+.done p{margin:0;color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a class="mark" href="./">GAV<b>&amp;</b>LOVE</a>
+  <span class="sep"></span>
+  <a class="back" href="./">← до сторінки системи</a>
+</div>
+
+<div class="wrap">
+
+  <p class="eyebrow">Анкета перед передачею</p>
+  <h1>Розкажіть, що доналаштувати</h1>
+  <p class="lede">Дві частини: що поправити на сайті й кому які доступи заводити. Відповідайте своїми словами — «не подобається синя кнопка» зрозуміліше за технічний опис. Порожні поля пропускайте, це не іспит.</p>
+  <p class="lede">Написане зберігається у вашому браузері, тож можна закрити й повернутись пізніше. Надсилається одним натисканням, одразу розробнику.</p>
+
+  <form id="brief" novalidate>
+
+    <div class="trap" aria-hidden="true">
+      <label for="f-site">Не заповнюйте це поле</label>
+      <input type="text" id="f-site" name="site" tabindex="-1" autocomplete="off">
+    </div>
+
+    <fieldset class="part">
+      <h2>Про вас</h2>
+      <p class="hint">Щоб знати, кому відповідати.</p>
+      <div class="two">
+        <div class="q">
+          <label for="f-who">Ваше імʼя</label>
+          <input type="text" id="f-who" autocomplete="name">
+        </div>
+        <div class="q">
+          <label for="f-contact">Телефон або Telegram</label>
+          <input type="text" id="f-contact" autocomplete="tel">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="part">
+      <h2>Частина 1 · Сайт</h2>
+      <p class="hint">Усе, що тут напишете, робиться без переробки системи — це налаштування, а не нова розробка.</p>
+
+      <div class="q">
+        <label for="q1">Що на сайті подобається і має лишитись як є?</label>
+        <span class="sub">Щоб випадково не змінити те, що працює.</span>
+        <textarea id="q1"></textarea>
+      </div>
+      <div class="q">
+        <label for="q2">Що не подобається або виглядає не так?</label>
+        <span class="sub">Можна просто «головна сторінка надто порожня» або «фото котів замало».</span>
+        <textarea id="q2"></textarea>
+      </div>
+      <div class="q">
+        <label for="q3">Які тексти треба виправити?</label>
+        <span class="sub">Напишіть, де саме і на що замінити. Якщо текстів багато — можна списком.</span>
+        <textarea id="q3"></textarea>
+      </div>
+      <div class="q">
+        <label for="q4">Які фото замінити? Що має бути на головній першим?</label>
+        <span class="sub">Фото надішлете окремо — тут достатньо сказати, які саме.</span>
+        <textarea id="q4"></textarea>
+      </div>
+      <div class="q">
+        <label for="q5">Які розділи прибрати або додати?</label>
+        <span class="sub">Зараз є: послуги, прайс, галерея, міні-готель, денний садочок, команда, вакансії, відгуки.</span>
+        <textarea id="q5"></textarea>
+      </div>
+      <div class="q">
+        <label for="q6">Актуальні контакти й години роботи</label>
+        <span class="sub">Адреса, телефони, Instagram, вихідні. Навіть якщо нічого не змінилось — підтвердьте.</span>
+        <textarea id="q6"></textarea>
+      </div>
+      <div class="q">
+        <label for="q7">Акції, знижки, сезонні пропозиції</label>
+        <span class="sub">Те, що має бути помітно на сайті просто зараз.</span>
+        <textarea id="q7"></textarea>
+      </div>
+      <div class="q">
+        <label for="q8">Що у вас питають клієнти найчастіше?</label>
+        <span class="sub">Якщо питання повторюється — його краще винести на сайт, і ви перестанете на нього відповідати.</span>
+        <textarea id="q8"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset class="part">
+      <h2>Частина 2 · Доступи</h2>
+      <p class="hint">За цими відповідями заводяться акаунти, і після передачі керуєте ними ви самі.</p>
+
+      <div class="q">
+        <label for="q9">Власниця: повне імʼя</label>
+        <span class="sub">Як підписувати акаунт і як звертатись у повідомленнях.</span>
+        <textarea id="q9" style="min-height:60px"></textarea>
+      </div>
+      <div class="q">
+        <label for="q10">Потрібен адміністратор? Хто саме?</label>
+        <span class="sub">Адміністратор бачить записи, клієнтів і прайс, але не бачить фінансів і не керує акаунтами.</span>
+        <textarea id="q10"></textarea>
+      </div>
+      <div class="q">
+        <label for="q11">Майстри: імена й кому потрібен свій кабінет</label>
+        <span class="sub">Зараз заведені Дарʼя, Юлія і Симон. Напишіть, кого додати, кого прибрати.</span>
+        <textarea id="q11"></textarea>
+      </div>
+      <div class="q">
+        <label for="q12">Хто, крім вас, має бачити фінанси?</label>
+        <span class="sub">За замовчуванням — ніхто. Це навмисно.</span>
+        <textarea id="q12" style="min-height:60px"></textarea>
+      </div>
+      <div class="q">
+        <label for="q13">Пошта Google для календаря записів</label>
+        <span class="sub">Календар створюється у вашому акаунті, і доступ до нього ви зможете забрати будь-коли.</span>
+        <textarea id="q13" style="min-height:60px"></textarea>
+      </div>
+      <div class="q">
+        <label for="q14">Хто в Telegram отримує повідомлення про нові записи?</label>
+        <span class="sub">Можна кілька людей або спільний чат салону.</span>
+        <textarea id="q14" style="min-height:60px"></textarea>
+      </div>
+      <div class="q">
+        <label for="q15">Бажане імʼя для домену</label>
+        <span class="sub">Кілька варіантів, від найкращого: раптом перший зайнятий. Наприклад gavandlove.com.ua.</span>
+        <textarea id="q15" style="min-height:60px"></textarea>
+      </div>
+      <div class="q">
+        <label for="q16">Імʼя для вашого Telegram-бота</label>
+        <span class="sub">Бот буде ваш, на ваш акаунт. Імʼя має закінчуватись на «bot», наприклад gav_and_love_bot.</span>
+        <textarea id="q16" style="min-height:60px"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset class="part">
+      <h2>Наостанок</h2>
+      <div class="q">
+        <label for="q17">Що ще важливо, про що ми не спитали?</label>
+        <textarea id="q17"></textarea>
+      </div>
+    </fieldset>
+
+    <div class="send">
+      <button type="submit" id="go">Надіслати бриф</button>
+      <span class="state" id="state"></span>
+    </div>
+    <p class="saved" id="saved"></p>
+
+  </form>
+
+  <div class="done" id="done" hidden>
+    <h2>Дякуємо — бриф надіслано</h2>
+    <p>Розробник отримав його в Telegram і звʼяжеться з вами. Якщо згадаєте щось іще — просто заповніть анкету ще раз, вона нічого не затирає.</p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var API = "https://gavlove-booking.besenok911.workers.dev";
+  var KEY = "gavlove-brief-draft";
+  var form = document.getElementById("brief");
+  var btn  = document.getElementById("go");
+  var state= document.getElementById("state");
+  var saved= document.getElementById("saved");
+  var done = document.getElementById("done");
+
+  // Питання беремо з самої сторінки, щоб текст у телеграмі збігався з тим, що бачила людина.
+  function fields(){
+    return [].slice.call(form.querySelectorAll("textarea, input[type=text]"))
+      .filter(function(el){ return el.id && el.id !== "f-site"; });
+  }
+  function labelOf(el){
+    var l = form.querySelector('label[for="' + el.id + '"]');
+    return l ? l.textContent.trim() : el.id;
+  }
+
+  /* чернетка живе в браузері власниці й нікуди не їде */
+  var draft = {};
+  try { draft = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch(e){ draft = {}; }
+  fields().forEach(function(el){ if (draft[el.id]) el.value = draft[el.id]; });
+  function mark(){
+    var n = fields().filter(function(el){ return el.value.trim(); }).length;
+    saved.textContent = n ? ("Збережено в цьому браузері · заповнено полів: " + n) : "";
+  }
+  mark();
+  form.addEventListener("input", function(e){
+    if (!e.target.id || e.target.id === "f-site") return;
+    draft[e.target.id] = e.target.value;
+    try { localStorage.setItem(KEY, JSON.stringify(draft)); } catch(err){}
+    mark();
+  });
+
+  form.addEventListener("submit", async function(e){
+    e.preventDefault();
+    var who = (document.getElementById("f-who").value || "").trim();
+    var contact = (document.getElementById("f-contact").value || "").trim();
+    var items = fields()
+      .filter(function(el){ return el.id !== "f-who" && el.id !== "f-contact" && el.value.trim(); })
+      .map(function(el){ return { q: labelOf(el), a: el.value.trim() }; });
+
+    if (!items.length){
+      state.className = "state bad";
+      state.textContent = "Заповніть хоча б одне поле — інакше надсилати нічого.";
+      return;
+    }
+
+    btn.disabled = true;
+    state.className = "state";
+    state.textContent = "Надсилаємо…";
+    try {
+      var r = await fetch(API + "/brief", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          kind: "Бриф GAV&LOVE",
+          who: who, contact: contact, items: items,
+          site: document.getElementById("f-site").value
+        })
+      });
+      var d = await r.json();
+      if (d && d.ok){
+        form.hidden = true;
+        done.hidden = false;
+        try { localStorage.removeItem(KEY); } catch(err){}
+        done.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+      state.className = "state bad";
+      state.textContent = (d && d.error) || "Не вдалося надіслати. Спробуйте ще раз.";
+    } catch(err){
+      state.className = "state bad";
+      state.textContent = "Немає звʼязку. Перевірте інтернет і спробуйте ще раз — написане збережено.";
+    }
+    btn.disabled = false;
+  });
+})();
+</script>
+</body>
+</html>
